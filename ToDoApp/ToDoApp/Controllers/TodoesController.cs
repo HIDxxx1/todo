@@ -13,6 +13,8 @@ namespace ToDoApp.Controllers
     /// <summary>
     /// クラス名はコントローラーで終らなくてはならない（Controllerクラスの継承）
     /// </summary>
+    /// サインインしている状態のみアクセス可能（各メソッドに）
+    [Authorize]
     public class TodoesController : Controller
     {
         //コントローラーのプライベート変数にTodoesContextを保持している
@@ -55,7 +57,8 @@ namespace ToDoApp.Controllers
         // 詳細については、https://go.microsoft.com/fwlink/?LinkId=317598 を参照してください。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Summary,Detail,Limit,Done")] Todo todo)
+        public ActionResult Create([Bind(Include = "Id,Summary,Detail,Limit")] Todo todo)
+
         {
             //入力内容が適正かチェックする
             if (ModelState.IsValid)
