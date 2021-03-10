@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ColorDto.cs" />
     <Compile Include="SampleMetro.cs">
       <SubType>Form</SubType>
     </Compile>

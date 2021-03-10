@@ -1,4 +1,5 @@
 ﻿using MetroFramework.Forms;
+using MetroSample.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace MetroSample
 {                                     //Metroを継承
     public partial class SampleMetro : MetroForm
     {
+        private BindingList<ColorDto> _colorDtos = new BindingList<ColorDto>
         public SampleMetro()
         {
             InitializeComponent();
@@ -20,6 +22,25 @@ namespace MetroSample
 
             ThemeComboBox.Items.Add("Dark");
             ThemeComboBox.Items.Add("Light");
+
+           
+
+             = 0,
+        Black = 1,
+        White = 2,
+        Silver = 3,
+        Blue = 4,
+        Green = 5,
+        Lime = 6,
+        Teal = 7,
+        Orange = 8,
+        Brown = 9,
+        Pink = 10,
+        Magenta = 11,
+        Purple = 12,
+        Red = 13,
+        Yellow = 14
+                _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Default));
         }
 
         /// <summary>
@@ -37,6 +58,11 @@ namespace MetroSample
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
             }
+        }
+
+        private void ColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Red;
         }
     }
 }
