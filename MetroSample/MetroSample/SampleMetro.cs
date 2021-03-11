@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework;
+using MetroFramework.Forms;
 using MetroSample.Helpers;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace MetroSample
 {                                     //Metroを継承
     public partial class SampleMetro : MetroForm
     {
-        private BindingList<ColorDto> _colorDtos = new BindingList<ColorDto>
+        private BindingList<ColorDto> _colorDtos = new BindingList<ColorDto>();
         public SampleMetro()
         {
             InitializeComponent();
@@ -23,24 +24,26 @@ namespace MetroSample
             ThemeComboBox.Items.Add("Dark");
             ThemeComboBox.Items.Add("Light");
 
-           
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Default));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Black));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.White));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Silver));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Blue));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Green));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Lime));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Teal));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Orange));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Brown));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Pink));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Magenta));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Purple));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Red));
+            _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Yellow));
 
-             = 0,
-        Black = 1,
-        White = 2,
-        Silver = 3,
-        Blue = 4,
-        Green = 5,
-        Lime = 6,
-        Teal = 7,
-        Orange = 8,
-        Brown = 9,
-        Pink = 10,
-        Magenta = 11,
-        Purple = 12,
-        Red = 13,
-        Yellow = 14
-                _colorDtos.Add(new ColorDto(MetroFramework.MetroColorStyle.Default));
+            ColorComboBox.ValueMember = nameof(ColorDto.Value);
+            ColorComboBox.DisplayMember = nameof(ColorDto.DisplayValue);
+            ColorComboBox.DataSource = _colorDtos;
+
         }
 
         /// <summary>
@@ -62,7 +65,65 @@ namespace MetroSample
 
         private void ColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Red;
+            var dto = ColorComboBox.SelectedItem as ColorDto;
+            if(dto != null)
+            {
+                metroStyleManager1.Style = dto.Value;
+            }
+            
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            //MetroMessageBox.Show()
+            MetroMessageBox.Show(
+                this,
+                "保存しました",
+                "Infometion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            MetroMessageBox.Show(
+                this,
+                "保存しました",
+                "Warning",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            MetroMessageBox.Show(
+               this,
+               "保存しました",
+               "Error",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+
+            MetroMessageBox.Show(
+            this,
+            "保存しますか？",
+            "Question",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            MetroMessageBox.Show(
+         this,
+         "保存しますか？",
+         "Question",
+         MessageBoxButtons.OKCancel,
+         MessageBoxIcon.Question);
+
+            MetroMessageBox.Show(
+         this,
+         "保存しますか？",
+         "Question",
+         MessageBoxButtons.YesNoCancel,
+         MessageBoxIcon.Question);
+
+            MetroMessageBox.Show(
+    this,
+    "実行しますか？",
+    "Question",
+    MessageBoxButtons.RetryCancel,
+    MessageBoxIcon.Question);
         }
     }
 }

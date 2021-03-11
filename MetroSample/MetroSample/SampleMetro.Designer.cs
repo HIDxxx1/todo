@@ -44,22 +44,21 @@ namespace MetroSample
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(50, 178);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.metroButton1.Location = new System.Drawing.Point(23, 89);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(284, 46);
+            this.metroButton1.Size = new System.Drawing.Size(131, 23);
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "metroButton1";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(50, 282);
-            this.metroTile1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.metroTile1.Location = new System.Drawing.Point(23, 141);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(284, 244);
+            this.metroTile1.Size = new System.Drawing.Size(131, 122);
             this.metroTile1.TabIndex = 1;
             this.metroTile1.Text = "metroTile1";
             this.metroTile1.UseSelectable = true;
@@ -67,10 +66,9 @@ namespace MetroSample
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(347, 282);
-            this.metroTile2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.metroTile2.Location = new System.Drawing.Point(160, 141);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(284, 244);
+            this.metroTile2.Size = new System.Drawing.Size(131, 122);
             this.metroTile2.TabIndex = 2;
             this.metroTile2.Text = "metroTile2";
             this.metroTile2.UseSelectable = true;
@@ -78,10 +76,9 @@ namespace MetroSample
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(50, 538);
-            this.metroTile3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.metroTile3.Location = new System.Drawing.Point(23, 269);
             this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(581, 244);
+            this.metroTile3.Size = new System.Drawing.Size(268, 122);
             this.metroTile3.TabIndex = 3;
             this.metroTile3.Text = "metroTile3";
             this.metroTile3.UseSelectable = true;
@@ -94,10 +91,9 @@ namespace MetroSample
             // 
             this.ThemeComboBox.FormattingEnabled = true;
             this.ThemeComboBox.ItemHeight = 23;
-            this.ThemeComboBox.Location = new System.Drawing.Point(303, 40);
-            this.ThemeComboBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ThemeComboBox.Location = new System.Drawing.Point(256, 20);
             this.ThemeComboBox.Name = "ThemeComboBox";
-            this.ThemeComboBox.Size = new System.Drawing.Size(161, 29);
+            this.ThemeComboBox.Size = new System.Drawing.Size(76, 29);
             this.ThemeComboBox.TabIndex = 4;
             this.ThemeComboBox.UseSelectable = true;
             this.ThemeComboBox.SelectedIndexChanged += new System.EventHandler(this.ThemeComboBox_SelectedIndexChanged);
@@ -105,8 +101,7 @@ namespace MetroSample
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(231, 50);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(201, 25);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(49, 19);
             this.metroLabel1.TabIndex = 5;
@@ -115,8 +110,7 @@ namespace MetroSample
             // Metrolabel
             // 
             this.Metrolabel.AutoSize = true;
-            this.Metrolabel.Location = new System.Drawing.Point(516, 50);
-            this.Metrolabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.Metrolabel.Location = new System.Drawing.Point(390, 25);
             this.Metrolabel.Name = "Metrolabel";
             this.Metrolabel.Size = new System.Drawing.Size(42, 19);
             this.Metrolabel.TabIndex = 7;
@@ -126,19 +120,18 @@ namespace MetroSample
             // 
             this.ColorComboBox.FormattingEnabled = true;
             this.ColorComboBox.ItemHeight = 23;
-            this.ColorComboBox.Location = new System.Drawing.Point(603, 40);
-            this.ColorComboBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ColorComboBox.Location = new System.Drawing.Point(449, 20);
             this.ColorComboBox.Name = "ColorComboBox";
-            this.ColorComboBox.Size = new System.Drawing.Size(161, 29);
+            this.ColorComboBox.Size = new System.Drawing.Size(76, 29);
             this.ColorComboBox.TabIndex = 6;
             this.ColorComboBox.UseSelectable = true;
             this.ColorComboBox.SelectedIndexChanged += new System.EventHandler(this.ColorComboBox_SelectedIndexChanged);
             // 
             // SampleMetro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1733, 900);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Metrolabel);
             this.Controls.Add(this.ColorComboBox);
             this.Controls.Add(this.metroLabel1);
@@ -147,10 +140,8 @@ namespace MetroSample
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroButton1);
-            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "SampleMetro";
-            this.Padding = new System.Windows.Forms.Padding(43, 120, 43, 40);
-            this.Text = "Form1";
+            this.Text = "MetroSample";
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
