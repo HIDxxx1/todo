@@ -76,13 +76,7 @@ namespace MetroSample
         private void metroButton1_Click(object sender, EventArgs e)
         {
             //MetroMessageBox.Show()
-            MetroMessageBox.Show(
-                this,
-                "保存しました",
-                "Infometion",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
+           
             MetroMessageBox.Show(
                 this,
                 "保存しました",
@@ -124,6 +118,25 @@ namespace MetroSample
     "Question",
     MessageBoxButtons.RetryCancel,
     MessageBoxIcon.Question);
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(
+               this,
+               "保存しました",
+               "Infometion",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+
+        }
+
+        private void metroDateTime1_ValueChanged(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(
+                this,
+            metroDateTime1.Value.ToString("yyyy/MM/dd HH:mm:ss"),
+            "Information");
         }
     }
 }
