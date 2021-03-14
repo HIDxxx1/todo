@@ -1,25 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Momo.Objects
 {
-   internal static class SQLServerHelper
+    internal static class SQLServerHelper
     {
         internal static string ConnectionString = @"";
 
         static SQLServerHelper()
         {
-            var builder = new SqlConnectionStringBuilder();
             //SQLserverのサーバー名
-            builder.DataSource = @"DESKTOP-E5AQK36\SQLEXPRESS";
-            //データベース名
-            builder.InitialCatalog = "Mono";
-            //認証方法
-            builder.IntegratedSecurity = true;
+
+            var builder = new SqlConnectionStringBuilder();
+            builder.DataSource =
+                ConfigurationManager.AppSettings["DataSource"];
+            builder.InitialCatalog =
+                ConfigurationManager.AppSettings["InitialCatalog"];
+            builder.IntegratedSecurity =
+                ConfigurationManager.AppSettings["IntegratedSecurity"] == "1";
+            builder.UserID =
+                ConfigurationManager.AppSettings["UserID"];
+            builder.Password =
+                ConfigurationManager.AppSettings["Password"];
+
             //接続文字列
             ConnectionString = builder.ToString();
         }
