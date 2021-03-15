@@ -88,8 +88,33 @@ namespace WinForm
 
             if(dialog == DialogResult.OK)
             {
+                using (var sw = new
+                 System.IO.StreamWriter("save.csv", true, Encoding.GetEncoding("shift_jis")))
+
+                {
+                    sw.Write(idTextBox.Text);
+                    sw.Write(",");
+                    sw.Write(MailCheckBox.Checked);
+                    sw.Write(",");
+                    sw.Write(MailAddressTextBox.Text);
+                    sw.Write(",");
+
+                    if (BusinessRadioButton.Checked)
+                    {
+                        sw.Write("1");
+                    }
+                    else
+                    {
+                        sw.Write("0");
+                    }
+                  
+                    sw.Write(EnableComboBox.Text);
+
+                    sw.WriteLine("");
+                }
                 StatusLabel.Text = "保存しました。";
             }
+
             else
             {
                 StatusLabel.Text = "キャンセルしました。";
