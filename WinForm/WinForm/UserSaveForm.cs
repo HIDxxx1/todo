@@ -81,12 +81,31 @@ namespace WinForm
         /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
-          DialogResult dialog =  MessageBox.Show(
-                "保存しますか？",
-                "確認", 
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-            if(dialog == DialogResult.OK)
+            if (idTextBox.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("IDを入力してください。",
+                    "警告",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!MailAddressLabel.Text.Contains(","))
+            {
+                MessageBox.Show("メールアドレスにカンマは入力できません。",
+                      "警告",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult dialog = MessageBox.Show(
+                  "保存しますか？",
+                  "確認",
+                  MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (dialog == DialogResult.OK)
             {
                 using (var sw = new
                  System.IO.StreamWriter("save.csv", true, Encoding.GetEncoding("shift_jis")))
@@ -107,7 +126,7 @@ namespace WinForm
                     {
                         sw.Write("0");
                     }
-                  
+
                     sw.Write(EnableComboBox.Text);
 
                     sw.WriteLine("");
