@@ -54,6 +54,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm1.Designer.cs">
+      <DependentUpon>SubForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm2.Designer.cs">
+      <DependentUpon>SubForm2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +78,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SubForm1.resx">
+      <DependentUpon>SubForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm2.resx">
+      <DependentUpon>SubForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
