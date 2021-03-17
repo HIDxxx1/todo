@@ -91,7 +91,7 @@ namespace WinForm
                 return;
             }
 
-            if (!MailAddressLabel.Text.Contains(","))
+            if (MailAddressLabel.Text.Contains(","))
             {
                 MessageBox.Show("メールアドレスにカンマは入力できません。",
                       "警告",
@@ -120,14 +120,18 @@ namespace WinForm
 
                     if (BusinessRadioButton.Checked)
                     {
+                      
                         sw.Write("1");
+
                     }
                     else
                     {
+                       
                         sw.Write("0");
                     }
-
+                    sw.Write(",");
                     sw.Write(EnableComboBox.Text);
+                   
 
                     sw.WriteLine("");
                 }

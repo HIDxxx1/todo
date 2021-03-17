@@ -43,6 +43,7 @@ namespace WinForm
             this.dgvUserDataGrid.RowTemplate.Height = 33;
             this.dgvUserDataGrid.Size = new System.Drawing.Size(800, 450);
             this.dgvUserDataGrid.TabIndex = 0;
+            this.dgvUserDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserDataGrid_CellContentClick);
             // 
             // UserListForm
             // 

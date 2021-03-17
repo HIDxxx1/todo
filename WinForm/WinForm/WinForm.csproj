@@ -52,6 +52,7 @@
     <Compile Include="MenuForm1.Designer.cs">
       <DependentUpon>MenuForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfoDTO.cs" />
     <Compile Include="UserListForm.cs">
       <SubType>Form</SubType>
     </Compile>
